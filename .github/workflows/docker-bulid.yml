@@ -19,6 +19,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: false
-          tags: assafelovic/gpt-researcher:latest
+          tags: CoreViewInc/gpt-researcher:latest
           file: Dockerfile
 

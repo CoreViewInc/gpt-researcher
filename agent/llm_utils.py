@@ -65,6 +65,7 @@ def send_chat_completion_request(
         result = lc_openai.ChatCompletion.create(
             model=model, # Change model here to use different models
             messages=messages,
+            deployment_name=model,
             temperature=temperature,
             max_tokens=max_tokens,
             provider=CFG.llm_provider, # Change provider here to use a different API
@@ -82,6 +83,7 @@ async def stream_response(model, messages, temperature, max_tokens, websocket):
     for chunk in lc_openai.ChatCompletion.create(
             model=model,
             messages=messages,
+            deployment_name=model,
             temperature=temperature,
             max_tokens=max_tokens,
             provider=CFG.llm_provider,
